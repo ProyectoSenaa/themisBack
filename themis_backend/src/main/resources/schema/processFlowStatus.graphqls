@@ -1,0 +1,33 @@
+type ProcessFlowStatus {
+    id: ID
+    name: String
+    description: String
+}
+
+type ProcessFlowStatusPage {
+    data: [ProcessFlowStatus]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input ProcessFlowStatusDto {
+    id: ID
+    name: String
+    description: String
+}
+
+extend type Query {
+    allProcessFlowStatuses(page: Int, size: Int): ProcessFlowStatusPage
+    processFlowStatusById(id: ID!): ProcessFlowStatus
+}
+
+extend type Mutation {
+    addProcessFlowStatus(input: ProcessFlowStatusDto): Response
+    updateProcessFlowStatus(id: ID!, input: ProcessFlowStatusDto): Response
+    deleteProcessFlowStatus(id: ID!): Response
+}
+

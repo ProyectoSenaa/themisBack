@@ -1,0 +1,37 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/themisappgrapg
+    username: fabricaadmin
+    password: "0001"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  graphql:
+    graphiql:
+      enabled: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: senathemis@gmail.com
+    password: "al w v n r a t k r e d e a k t"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+logging:
+  level:
+    root: WARN
+
+grpc:
+  server:
+    port: 0

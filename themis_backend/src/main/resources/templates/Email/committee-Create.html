@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Evento de Comité Registrado - SENA Themis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .email-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .email-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #398f0d, #4da811, #5cb917, #398f0d);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #398f0d 0%, #4da811 50%, #5cb917 100%);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-svg {
+            width: 64px;
+            height: 64px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 50px 40px;
+            background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #398f0d;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #398f0d, #4da811);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 5px solid #398f0d;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(57, 143, 13, 0.02) 100%);
+            border-radius: 16px;
+            pointer-events: none;
+        }
+
+        .info-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px -5px rgba(57, 143, 13, 0.15);
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #398f0d;
+            min-width: 160px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            color: #374151;
+            font-weight: 400;
+            flex: 1;
+            font-size: 15px;
+        }
+
+        .description-box {
+            background: linear-gradient(135deg, #f0f9f0 0%, #e6f4e6 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid #c6f6d5;
+        }
+
+        .description-text {
+            color: #2d5016;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .date-stamp {
+            background: linear-gradient(135deg, #398f0d 0%, #4da811 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px -8px rgba(57, 143, 13, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .date-stamp::before {
+            content: '📅';
+            font-size: 16px;
+        }
+
+        .date-stamp::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .date-stamp:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            padding: 40px;
+            text-align: center;
+            color: #e2e8f0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #398f0d, #4da811, #5cb917);
+        }
+
+        .footer-main {
+            font-weight: 600;
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .footer-sub {
+            font-weight: 500;
+            font-size: 14px;
+            color: #398f0d;
+            margin-bottom: 20px;
+        }
+
+        .footer-note {
+            font-size: 13px;
+            color: #a0aec0;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+
+        .decorative-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(57, 143, 13, 0.1), transparent);
+            top: -50px;
+            right: -50px;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 20px 10px; }
+            .email-wrapper { border-radius: 16px; }
+            .header { padding: 40px 25px; }
+            .content { padding: 35px 25px; }
+            .footer { padding: 30px 25px; }
+            .logo-container { flex-direction: column; gap: 15px; }
+            .logo-text { font-size: 24px; }
+            .title { font-size: 24px; }
+            .info-row { flex-direction: column; gap: 5px; }
+            .info-label { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="email-wrapper">
+    <div class="header">
+        <div class="decorative-element"></div>
+        <div class="logo-container">
+            <div class="logo-text">SENA THEMIS</div>
+        </div>
+        <p class="subtitle">Sistema de Gestión de Comités Académicos</p>
+    </div>
+    <div class="content">
+        <h1 class="title">Nuevo Evento de Comité Registrado</h1>
+        <p class="intro-text">Se le notifica que se ha programado un nuevo evento de comité con los siguientes detalles.</p>
+        <div class="info-section">
+            <div class="info-box">
+                <div class="info-row">
+                    <span class="info-label">Fecha del Evento:</span>
+                    <span class="info-value">${eventDate}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Hora:</span>
+                    <span class="info-value">${hour}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Sesión:</span>
+                    <span class="info-value">${session}</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-row">
+                    <span class="info-label">Estudiantes:</span>
+                    <ul class="info-value" style="list-style: none; padding-left: 0;">${studentsList}</ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-row">
+                    <span class="info-label">Instructores:</span>
+                    <ul class="info-value" style="list-style: none; padding-left: 0;">${teachersList}</ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-row">
+                    <span class="info-label">Personal Administrativo:</span>
+                    <ul class="info-value" style="list-style: none; padding-left: 0;">${administrativesList}</ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-stamp">
+            Notificación generada automáticamente el ${currentDate}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-main">SENA - Servicio Nacional de Aprendizaje</p>
+        <p class="footer-sub">Sistema Themis - Gestión Integral de Novedades Académicas</p>
+        <p class="footer-note">Este mensaje ha sido generado automáticamente por el sistema.</p>
+        <p class="footer-note">Por favor, no responder directamente a este correo electrónico.</p>
+    </div>
+</div>
+</body>
+</html>

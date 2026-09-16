@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package co.sena.edu.olympo_back;
+
+import "collaborator.proto";
+
+message TeacherResponse {
+  int64 id = 1;
+  int32 total_hours = 2;
+  bool state = 3;
+  string created_at = 4;
+  string updated_at = 5;
+  CollaboratorResponse collaborator = 6;
+  bool found = 7;
+}
+
+message GetTeacherByIdRequest {
+  int64 id = 1;
+}
+
+message GetTeacherByPersonDocumentRequest {
+  int64 document = 1;
+}
+
+message GetTeachersByIdsRequest {
+  repeated int64 ids = 1;
+}
+
+message TeacherList {
+  repeated TeacherResponse teachers = 1;
+}
+
+service TeacherService {
+  rpc GetById(GetTeacherByIdRequest) returns (TeacherResponse);
+  rpc GetTeacherByPersonDocument(GetTeacherByPersonDocumentRequest) returns (TeacherResponse);
+  rpc GetByIds(GetTeachersByIdsRequest) returns (TeacherList);
+}

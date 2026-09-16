@@ -1,0 +1,21 @@
+# Subscription root for notifications
+# This file declares the Subscription type expected by the DGS resolver
+
+# Payload sent by the subscription (matches NotificationPushDto)
+# Use the project's scalar Long which is declared in Response.graphqls
+
+type NotificationPush {
+    id: Long
+    notiMessage: String
+    notiStatus: String
+    registrationDate: String
+    noveltyId: Long
+    recipientId: Long
+}
+
+# GraphQL subscription root
+type Subscription {
+    # Dispatched when a notification is created. recipientId is optional
+    notificationCreated(recipientId: Long): NotificationPush
+}
+

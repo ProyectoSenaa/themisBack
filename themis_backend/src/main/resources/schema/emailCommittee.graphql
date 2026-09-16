@@ -1,0 +1,34 @@
+
+type CommitteeEmailResponse {
+    code: String!
+    message: String!
+    recipients: [String!]
+    totalRecipients: Int
+    committeeEventId: Long
+}
+
+input CommitteeEventInput {
+    id: Long
+    date: String!
+    startHour: String!
+    endHour: String!
+    committeeId: Long!
+    committee: CommitteeInput
+}
+
+input CommitteeInput {
+    id: Long
+    coordinationId: Long!
+    studentsIds: [Long!]!
+    teachersIds: [Long!]!
+    administrativesIds: [Long!]!
+    isCurrent: Boolean!
+    isActive: Boolean!
+    committeeEvents: [CommitteeEventInput!]
+}
+
+extend type Mutation {
+    addCommitteeEventAndSendEmail(input: CommitteeEventInput!): CommitteeEmailResponse!
+    sendCommitteeEventCreationEmail(committeeEventId: Long!): CommitteeEmailResponse!
+    addCommitteeAndSendEmail(input: CommitteeInput!): CommitteeEmailResponse!
+}

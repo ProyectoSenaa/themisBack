@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package co.sena.edu.olympo_back;
+
+import "Person.proto";
+import "contractType.proto";
+import "laborDepartment.proto";
+
+message CollaboratorResponse {
+  int64 id = 1;
+  string star_date = 2;
+  string end_date = 3;
+  bool state = 4;
+  string created_at = 5;
+  string update_at = 6;
+  ContractTypeResponse contract_type = 7;
+  LaborDepartmentResponse labor_department = 8;
+  PersonResponse person = 9;
+  bool found = 10;
+}

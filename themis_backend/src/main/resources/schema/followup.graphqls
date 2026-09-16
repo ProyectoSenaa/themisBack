@@ -1,0 +1,82 @@
+type FollowUpTypecount {
+    id: ID
+    nameFollowUp: String
+}
+
+type FollowUp @key(fields: "id") {
+    id: ID
+    creationDate: String
+    caseDescription: String
+    evidenceFiles: String
+    isActive: Boolean
+    followUpType: FollowUpType
+    followUpStatus: FollowUpStatus
+    followUpFlowStatus: FollowUpFlowStatus
+    student: Student
+    studentName: String
+    teacherName: String
+    studySheetId: Long
+    teacher: Teacher
+    coordinator: Administrative
+    committeeEvent: CommitteeEvent
+    minute: Minute
+    # Added for frontend compatibility: improvementPlanFiles as an alias for evidenceFiles
+    improvementPlanFiles: String
+}
+
+type FollowUpTypeCount {
+    id: ID
+    followUpTypeName: String
+    count: Int
+}
+
+type FollowUpPage {
+    data: [FollowUp]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+
+input FollowUpDto {
+    id: ID
+    creationDate: String
+    caseDescription: String
+    evidenceFiles: String
+    isActive: Boolean
+    followUpType: FollowUpTypeDto
+    followUpStatus: FollowUpStatusDto
+    followUpFlowStatus: FollowUpFlowStatusDto
+    studentId: Long
+    studySheetId: Long
+    teacherId: Long
+    coordinatorId: Long
+    committeeEvent: CommitteeEventDto
+    minuteId: Long
+    # Added ID fields to allow clients to send relation IDs directly
+    followUpTypeId: Long
+    followUpStatusId: Long
+    followUpFlowStatusId: Long
+    # Frontend may send or request improvementPlanFiles; map to entity.evidenceFiles
+    improvementPlanFiles: String
+}
+
+
+extend type Query {
+    allFollowUps(page: Int, size: Int): FollowUpPage
+    followUpById(id: ID!): FollowUp
+    followUpsByStudent(studentId: ID, page: Int, size: Int): FollowUpPage
+    followUpsByTeacher(teacherId: ID!, page: Int, size: Int): FollowUpPage
+    followUpsByCoordinator(coordinatorId: ID!, page: Int, size: Int): FollowUpPage
+}
+
+extend type Mutation {
+    addFollowUp(input: FollowUpDto): Response
+    updateFollowUp(id: ID!, input: FollowUpDto): Response
+    deleteFollowUp(id: ID!): Response
+    sendPendingFollowUpReminders: Response
+    returnFollowUp(id: ID!, observation: String!): Response
+}

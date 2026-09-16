@@ -1,0 +1,28 @@
+${AnsiColor.BRIGHT_GREEN}
+                                                                                      ████████╗██╗  ██╗███████╗███╗   ███╗██╗███████╗
+                                                                                      ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██║██╔════╝
+                                                                                         ██║   ███████║█████╗  ██╔████╔██║██║███████╗
+                                                                                         ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██║╚════██║
+                                                                                         ██║   ██║  ██║███████╗██║ ╚═╝ ██║██║███████║
+                                                                                         ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚══════╝
+
+                                                                                    ${AnsiColor.BRIGHT_BLACK}
+                                                                                     ┌───────────────────────────────────────────────┐
+                                                                                     │  App:   ${spring.application.name:${APPLICATION_NAME:themis}}                                │
+                                                                                     │  Ver:   ${application.version:${APP_VERSION:local}}                                 │
+                                                                                     │  Boot:  ${spring-boot.version}                                 │
+                                                                                     │  Java:  ${java.version}                               │
+                                                                                     │  User:  ${USER:${user.name}}                               │
+                                                                                     └───────────────────────────────────────────────┘
+
+                                                                                    ${AnsiColor.BRIGHT_MAGENTA}
+                                                                                      ⚖ “Justicia y claridad en cada novedad”
+
+                                                                                    ${AnsiColor.BRIGHT_BLUE}
+                                                                                      ➤ Port:       ${server.port:8080}
+                                                                                      ➤ GraphQL:    ${graphql.path:/themis/graphql}
+                                                                                      ➤ Timezone:   ${user.timezone:${TZ:America/Bogota}}
+                                                                                      ➤ Host:       ${HOSTNAME:${HOST:localhost}}
+
+                                                                                    ${AnsiColor.BRIGHT_BLACK}
+                                                                                      ─────────────────────────────────────────────────

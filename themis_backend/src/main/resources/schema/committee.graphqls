@@ -1,0 +1,44 @@
+type Committee @key(fields: "id") {
+    id: ID
+    coordination: Coordination
+    students: [Student]
+    teachers: [Teacher]
+    administratives: [Administrative]
+    isCurrent: Boolean
+    isActive: Boolean
+    committeeEvents: [CommitteeEvent]
+}
+
+type CommitteePage {
+    data: [Committee]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input CommitteeDto {
+    id: ID
+    coordinationId: Long
+    studentsIds: [Long]
+    teachersIds: [Long]
+    administrativesIds: [Long]
+    isCurrent: Boolean
+    isActive: Boolean
+    eventIds: [Long]
+}
+extend type Query {
+    allCommittees(page: Int, size: Int): CommitteePage
+    committeeById(id: ID!): Committee
+    committeesByStudentId(studentId: Long!): [Committee]
+    activeCommittees: [Committee]
+}
+extend type Mutation {
+    addCommittee(input: CommitteeDto): Response
+    updateCommittee(id: ID!, input: CommitteeDto): Response
+    deleteCommittee(id: ID!): Response
+    addPersonToCommittee(committeeId: Long!, personId: Long!, role: String!): Response
+    removePersonFromCommittee(committeeId: Long!, personId: Long!, role: String!): Response
+}

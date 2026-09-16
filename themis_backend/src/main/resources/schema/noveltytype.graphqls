@@ -1,0 +1,34 @@
+type NoveltyType {
+    id: Long
+    nameNovelty: String
+    isActive: Boolean
+    description: String
+    procedureDescription: String
+}
+
+type NoveltyTypePage {
+    data: [NoveltyType]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+input NoveltyTypeDto {
+    id: Long
+    nameNovelty: String
+    isActive: Boolean
+    description: String
+    procedureDescription: String
+}
+extend type Query {
+    allNoveltyTypes(page: Int, size: Int): NoveltyTypePage
+    allNoveltyTypeList: NoveltyTypePage
+
+}
+extend type Mutation {
+    addNoveltyType(input: NoveltyTypeDto): Response
+    updateNoveltyType(id: Long!, input: NoveltyTypeDto): Response
+    deleteNoveltyType(id: Long!): Response
+}

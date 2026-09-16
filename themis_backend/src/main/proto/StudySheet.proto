@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "co.sena.edu.olympo_back.proto";
+option java_outer_classname = "StudySheetProto";
+
+service StudySheetService {
+  rpc getStudySheetById (StudySheetRequest) returns (StudySheetResponse);
+}
+
+message StudySheetRequest {
+  int64 study_sheet_id = 1;
+}
+
+message StudySheetResponse{
+  int64 study_sheet_id = 1;
+  int32 number = 2;
+  int32 numberStudents = 3;
+  string startLective = 4;
+  string endLective = 5;
+  bool state = 6;
+  bool found = 7;
+}

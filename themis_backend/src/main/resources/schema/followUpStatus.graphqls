@@ -1,0 +1,32 @@
+type FollowUpStatus {
+    id: ID
+    name: String
+    description: String
+}
+
+type FollowUpStatusPage {
+    data: [FollowUpStatus]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input FollowUpStatusDto {
+    id: ID
+    name: String
+    description: String
+}
+
+extend type Query {
+    allFollowUpStatuses(page: Int, size: Int): FollowUpStatusPage
+    followUpStatusById(id: ID!): FollowUpStatus
+}
+
+extend type Mutation {
+    addFollowUpStatus(input: FollowUpStatusDto): Response
+    updateFollowUpStatus(id: ID!, input: FollowUpStatusDto): Response
+    deleteFollowUpStatus(id: ID!): Response
+}

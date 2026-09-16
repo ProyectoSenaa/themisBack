@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acta Comité - Réplica Exacta Final</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 25px;
+            color: #000;
+            line-height: 1.3;
+            font-size: 10pt;
+        }
+
+        .acta-container {
+            border: 1.25px solid #000;
+            padding: 20px 25px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            /* asegura que cubra toda la página */
+        }
+
+        .header-sena {
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .header-sena img {
+            width: 72px;
+            height: auto;
+            display: block;
+            margin: 0 auto 6px;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 6px 0;
+            color: #000;
+        }
+
+        .acta-title {
+            font-size: 12pt;
+            line-height: 1.05;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 9.2pt;
+            margin-bottom: 8px;
+        }
+
+        .meta-table th,
+        .meta-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: left;
+            vertical-align: top;
+            font-weight: normal;
+        }
+
+        .meta-table th {
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #f2f2f2;
+            /* gris uniforme */
+            font-size: 9pt;
+        }
+
+        .main-section-title {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 14px;
+            font-size: 11pt;
+            margin-bottom: 6px;
+        }
+
+        .main-section-title.left {
+            text-align: left;
+        }
+
+        .text-block {
+            text-align: justify;
+            margin: 6px 0 10px 0;
+            padding: 0 4px;
+            font-size: 9.2pt;
+        }
+
+        .text-block p {
+            margin: 4px 0;
+        }
+
+        .text-block ol, .text-block ul {
+            margin: 6px 0 6px 20px;
+            padding: 0;
+        }
+
+        .text-block li {
+            margin-bottom: 4px;
+        }
+
+        .novedad-title {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            font-size: 10pt;
+            text-align: left;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 6px 0 16px 0;
+            font-size: 9pt;
+        }
+
+        .info-table th, .info-table td {
+            border: 1px solid #000;
+            padding: 6px 6px;
+            vertical-align: middle;
+        }
+
+        .info-table th {
+            background: #f2f2f2;
+            /* gris uniforme */
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 9pt;
+            text-align: center;
+        }
+
+        .info-table td {
+            text-align: center;
+            font-size: 9pt;
+            padding: 5px 6px;
+        }
+
+        .info-table.compact th, .info-table.compact td {
+            padding: 4px 5px;
+            font-size: 8.6pt;
+        }
+
+        .firma-rows td {
+            height: 34px;
+            text-align: left;
+            padding: 6px;
+            vertical-align: middle;
+        }
+
+        .footer-legal {
+            margin-top: 18px;
+            border-top: 1px solid #000;
+            padding-top: 6px;
+            text-align: justify;
+            font-size: 9pt;
+            line-height: 1.18;
+        }
+
+        .footer-code {
+            text-align: center;
+            font-weight: 700;
+            margin-top: 8px;
+            font-size: 9pt;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+            .acta-container {
+                border-width: 1px;
+                padding: 15px;
+                min-height: 100%;
+                /* mantiene el borde en todas las páginas */
+            }
+            .header-sena img {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="acta-container">
+
+    <div class="header-sena">
+        <img src="sena_logo.png" alt="Logo SENA">
+    </div>
+
+    <h1 class="acta-title">ACTA NO. ${actaNumero} - ${actaAnio}</h1>
+    <h1 class="acta-title">NOMBRE DEL COMITÉ O DE LA REUNIÓN: ${nombreReunion}</h1>
+
+    <table class="meta-table">
+        <tbody>
+        <tr>
+            <th colspan="2">CIUDAD Y FECHA</th>
+            <th style="width: 25%">HORA INICIO</th>
+            <th style="width: 25%">HORA FIN</th>
+        </tr>
+        <tr>
+            <td colspan="2">${eventCity}, ${eventDate}</td>
+            <td style="text-align: center; font-weight: bold;">${eventHourInicio}</td>
+            <td style="text-align: center; font-weight: bold;">${eventHourFin}</td>
+        </tr>
+        <tr>
+            <th colspan="2">LUGAR Y/O ENLACE:</th>
+            <th colspan="2">DIRECCIÓN / REGIONAL / CENTRO:</th>
+        </tr>
+        <tr>
+            <td colspan="2">${eventPlace}</td>
+            <td colspan="2">${eventLocation}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 class="main-section-title left">AGENDA O PUNTOS PARA DESARROLLAR</h2>
+    <div class="text-block">
+        <ol>
+            <li>Atender las solicitudes elevadas novedades académicas de los aprendices pertenecientes a la Coordinación Académica de Tecnología e Innovación.</li>
+            <li>Informar la presente actuación administrativa a la coordinación de formación profesional integral y promoción y relaciones corporativas para registro de las novedades aprobadas en el aplicativo SENA **Sofia Plus**.</li>
+            <li>Informar la presente actuación administrativa al área de contrato de aprendizaje dado el caso en que el aprendiz se encuentre patrocinado.</li>
+        </ol>
+    </div>
+
+    <h2 class="main-section-title left">OBJETIVO(S) DE LA REUNIÓN</h2>
+    <div class="text-block">
+        <ol>
+            <li>Solicitar, tramitar o rechazar las novedades solicitadas por los aprendices en etapa lectiva que pertenecen a la Coordinación Académica de Tecnología e Innovación, establecidas en el artículo 21 del Reglamento del Aprendiz.</li>
+            <li>Informar la presente actuación administrativa a la coordinación de formación profesional integral y promoción y relaciones corporativas para registro de las novedades aprobadas en el aplicativo SENA **Sofia Plus**.</li>
+            <li>Informar la presente actuación administrativa al área de contrato de aprendizaje dado el caso en que el aprendiz se encuentre patrocinado.</li>
+        </ol>
+    </div>
+
+    <h2 class="main-section-title">DESARROLLO DE LA REUNIÓN</h2>
+
+    <h3 style="text-align: center; margin-top: 5px;">MARCO JURÍDICO</h3>
+    <div class="text-block">
+        <p>El acuerdo 007 de 2012, por medio del cual se adopta el Reglamento del Aprendiz SENA. CAPÍTULO VI. **GESTION ACADEMICO-ADMINISTRATIVA, ARTÍCULO 21**. Establece:</p>
+        <p>"El Aprendiz en proceso de formación podrá solicitar cualquiera de los siguientes trámites:</p>
+        <p><strong>1. Traslado:</strong> Es la solicitud formal que el Aprendiz eleva a través de oficio radicado en el centro de formación y registra en el sistema de gestión de formación cuando requiere cambio de jornada, de Centro de Formación, en el mismo programa y en la misma modalidad de formación, o en otra que corresponda a la misma red o línea tecnológica. Para solicitar traslado, el Aprendiz debe haber adelantado como mínimo el primer trimestre del proceso de formación del programa, y la correspondiente ${trasladoConformidad}</p>
+        <p><strong>2. Reingreso.</strong> Es la solicitud formal que el Aprendiz eleva a través de oficio radicado en el centro de formación y registra en el sistema de gestión de formación para reanudar su proceso de formación en el programa donde solicitó aplazamiento y la fecha límite para que el Aprendiz reingrese será la indicada en el acto administrativo respectivo. El reingreso está supeditado a que el programa se encuentre en ejecución y a la disponibilidad de cupo.</p>
+        <p><strong>3. Retiro voluntario.</strong> Es la solicitud formal que hace el aprendiz de formación laboral o tecnológica, en cualquiera de sus modalidades (presencial, virtual o a distancia) o estrategias de oferta (articulación con la media) para que se le autorice el retiro definitivo del programa de formación. Dicha solicitud debe radicarse de conformidad con lo establecido en este reglamento."</p>
+        <p><strong>Parágrafo 4.</strong> Los aprendices en programas de formación complementaria, eventos de divulgación tecnológica - EDT y programas de formación dual, no podrán realizar traslados. La solicitud de retiro voluntario del programa de formación, que no cuente con causas justificables se constituirá en una falta grave por parte del aprendiz, por lo tanto, la novedad que se registre será la de cancelación de la matrícula. Las causales justificables de retiro voluntario, las cuales deben contar con el soporte correspondiente que las acredite: a) Incapacidad médica igual o superior a veinte (20) días... b) Licencia de maternidad o paternidad... c) Calamidad domestica. d) Asuntos judiciales. e) Prestación del servicio militar.</p>
+    </div>
+
+    <h3 style="text-align: left; margin-top: 15px;">PARAMETROS DE APROBACIÓN Y TRAMITE DE LAS NOVEDADES ACADEMICAS DE LOS APRENDICES RELACIONADOS EN LA PRESENTE ACTA.</h3>
+    <div class="text-block">
+        <p>Cada novedad debe ser radicada por cada uno de los aprendices mediante correo electrónico y debe ser registrada en el aplicativo Sena **Sofia Plus**, posteriormente, se dará el aval por parte de la Coordinación Académica correspondiente.</p>
+        <p>En consecuencia, al realizar el estudio según lo establecido en el artículo 21 del Reglamento del Aprendiz, los siguientes aprendices surtieron los trámites para solicitar las novedades académicas relacionadas en la presente acta y aportaron los documentos soporte para justificar su solicitud.</p>
+    </div>
+
+    <h3 class="novedad-title">REINGRESOS APROBADOS:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th style="width: 3%">N°</th><th style="width: 7%">Ficha</th><th style="width: 10%">Tipo Documento</th><th style="width: 10%">Documento Aprendiz</th>
+            <th style="width: 20%">Nombre Aprendiz</th><th style="width: 20%">Correo</th><th style="width: 10%">Nivel Estudio</th><th style="width: 20%">Programa</th>
+        </tr>
+        </thead>
+        <tbody>${reingresosRows}</tbody>
+    </table>
+
+    <h3 class="novedad-title">RETIROS VOLUNTARIOS APROBADOS:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th>N°</th><th>Ficha</th><th>Tipo Documento</th><th>Documento Aprendiz</th>
+            <th>Nombre Aprendiz</th><th>Correo</th><th>Nivel Estudio</th><th>Programa</th>
+        </tr>
+        </thead>
+        <tbody>${retirosAprobadosRows}</tbody>
+    </table>
+
+    <h3 class="novedad-title">RETIRO VOLUNTARIO NO APROBADO:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th>N°</th><th>Ficha</th><th>Tipo Documento</th><th>Documento Aprendiz</th>
+            <th>Nombre Aprendiz</th><th>Correo</th><th>Nivel Estudio</th><th>Programa</th>
+        </tr>
+        </thead>
+        <tbody>${retirosNoAprobadosRows}</tbody>
+    </table>
+
+    <h3 class="novedad-title">TRASLADOS APROBADOS:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th>N°</th><th style="width: 8%">Ficha Origen</th><th style="width: 8%">Ficha Destino</th>
+            <th>Tipo Documento</th><th>Documento Aprendiz</th>
+            <th>Nombre Aprendiz</th><th>Correo</th><th>Nivel Estudio</th><th>Programa</th>
+        </tr>
+        </thead>
+        <tbody>${trasladosAprobadosRows}</tbody>
+    </table>
+
+    <h3 class="novedad-title">TRASLADO NO APROBADO:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th>N°</th><th>Ficha</th><th>Tipo Documento</th><th>Documento Aprendiz</th>
+            <th>Nombre Aprendiz</th><th>Correo</th><th>Nivel Estudio</th><th>Programa</th>
+        </tr>
+        </thead>
+        <tbody>${trasladosNoAprobadosRows}</tbody>
+    </table>
+
+    <h3 class="novedad-title">APLAZAMIENTOS RECHAZADOS:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th>N°</th><th>Ficha</th><th>Tipo Documento</th><th>Documento Aprendiz</th>
+            <th>Nombre Aprendiz</th><th>Correo</th><th>Nivel Estudio</th><th>Programa</th>
+        </tr>
+        </thead>
+        <tbody>${aplazamientosRows}</tbody>
+    </table>
+
+    <h3 class="novedad-title">LEVANTAMIENTO DE CONDICIONAMIENTO DE MATRÍCULA APROBADO:</h3>
+    <table class="info-table">
+        <thead>
+        <tr>
+            <th>N°</th><th>Ficha</th><th>Tipo Documento</th><th>Documento Aprendiz</th>
+            <th>Nombre Aprendiz</th><th>Correo</th><th>Nivel Estudio</th><th>Programa</th>
+        </tr>
+        </thead>
+        <tbody>${levantamientosRows}</tbody>
+    </table>
+
+    <h2 class="main-section-title">CONCLUSIONES</h2>
+    <div class="text-block">
+        <p>La Coordinación Académica de Tecnología e Innovación, aprueba el registro en el aplicativo Sena **SOFIA** Plus de las siguientes novedades académicas: **reingresos aprobados, retiros voluntarios aprobados, retiro voluntario no aprobado, traslados aprobados, traslado no aprobado, aplazamientos rechazados y levantamiento de condicionamiento de matrícula aprobado**, validadas en el Sistema Académico Administrativo **SOFIA PLUS**, correspondientes a los aprendices relacionados en la presente acta, las cuales fueron revisadas y analizadas por el coordinador académico y los mismos están relacionados en la matriz de novedades académicas adjunto de acuerdo con los soportes enviados por los aprendices; esto en el entendido que, aportaron los soportes legales de conformidad con el Reglamento del Aprendiz Sena.</p>
+        <p>Para el caso de las novedades no aprobadas los aprendices relacionados en la presente acta; no aportaron los soportes legales de conformidad con el Reglamento del Aprendiz Sena.</p>
+    </div>
+
+    <h2 class="main-section-title">ESTABLECIMIENTO Y ACEPTACIÓN DE COMPROMISOS</h2>
+    <table class="info-table firma-rows">
+        <thead>
+        <tr>
+            <th style="width: 30%">ACTIVIDAD / DECISIÓN</th><th style="width: 15%">FECHA</th>
+            <th style="width: 25%">RESPONSABLE</th><th style="width: 30%">FIRMA O PARTICIPACIÓN VIRTUAL</th>
+        </tr>
+        </thead>
+        <tbody>${compromisosRows}</tbody>
+    </table>
+
+    <h2 class="main-section-title">ASISTENTES Y APROBACIÓN DECISIONES</h2>
+    <table class="info-table firma-rows">
+        <thead>
+        <tr>
+            <th style="width: 20%">NOMBRE</th><th style="width: 25%">DEPENDENCIA / EMPRESA</th>
+            <th style="width: 10%">APRUEBA (SI/NO)</th><th style="width: 20%">OBSERVACIÓN</th>
+            <th style="width: 25%">FIRMA O PARTICIPACIÓN VIRTUAL</th>
+        </tr>
+        </thead>
+        <tbody>${asistentesRows}</tbody>
+    </table>
+
+    <h2 class="main-section-title">ANEXOS</h2>
+    <div class="footer-legal">
+        De acuerdo con la Ley 1581 de 2012, Protección de Datos Personales, el Servicio Nacional de Aprendizaje SENA, se compromete a garantizar la seguridad y protección de los datos personales que se encuentran almacenados en este documento, y les dará el tratamiento correspondiente en cumplimiento de lo establecido legalmente.
+    </div>
+
+    <div class="footer-code">
+        GQR-F-084 V02
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+type Minute {
+    id: ID
+    fileContent: String
+    committeeEventId: ID
+}
+
+type MinutePage {
+    data: [Minute]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input MinuteDto {
+    id: ID
+    fileContent: String
+    committeeEventId: ID
+}
+
+extend type Query {
+    allMinutes(page: Int, size: Int): MinutePage
+    minuteById(id: ID!): Minute
+    # Obtiene el acta guardada para un evento de comité específico
+    minuteByCommitteeEventId(committeeEventId: ID!): Minute
+    # Genera el acta en formato DOCX y la retorna en Base64 (no se guarda en BD)
+    generateMinuteDocx(committeeEventId: ID!): String
+    # Genera el acta en formato DOCX, la guarda temporalmente y retorna la URL de descarga
+    generateMinuteDocxUrl(committeeEventId: ID!): String
+    # Obtiene un archivo de acta temporal en Base64 por nombre de archivo
+    minuteFileBase64(filename: String!): String
+    # Obtiene el contenido Base64 del acta asociada a un evento (lee BD o genera on-demand)
+    minuteFileBase64ByEventId(committeeEventId: ID!): String
+}
+
+extend type Mutation {
+    addMinute(input: MinuteDto): Response
+    updateMinute(id: ID!, input: MinuteDto): Response
+    deleteMinute(id: ID!): Response
+    # Guarda el acta final firmada en la base de datos
+    # IMPORTANTE: El archivo debe ser un PDF en formato Base64
+    # Se acepta con o sin prefijo data URL (data:application/pdf;base64,)
+    saveFinalMinute(committeeEventId: ID!, fileContent: String!): Minute
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package co.sena.edu.olympo_back;
+
+import "collaborator.proto";
+
+message AdministrativeResponse {
+  int64 id = 1;
+  string extension_mail = 2;
+  string extension_phone = 3;
+  bool state = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  CollaboratorResponse collaborator = 7;
+  bool found = 8;
+}
+
+message GetAdministrativeByIdRequest {
+  int64 id = 1;
+}
+
+message GetAdministrativeByPersonDocumentRequest {
+  int64 document = 1;
+}
+
+message GetAdministrativesByIdsRequest {
+  repeated int64 ids = 1;
+}
+
+message AdministrativeList {
+  repeated AdministrativeResponse administratives = 1;
+}
+
+service AdministrativeService {
+  rpc GetById(GetAdministrativeByIdRequest) returns (AdministrativeResponse);
+  rpc GetAdministrativeByPersonDocument(GetAdministrativeByPersonDocumentRequest) returns (AdministrativeResponse);
+  rpc GetByIds(GetAdministrativesByIdsRequest) returns (AdministrativeList);
+}

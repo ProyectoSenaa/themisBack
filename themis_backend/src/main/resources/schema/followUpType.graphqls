@@ -1,0 +1,34 @@
+type FollowUpType {
+    id: ID
+    name: String
+    isActive: Boolean
+    description: String
+}
+
+type FollowUpTypePage {
+    data: [FollowUpType]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input FollowUpTypeDto {
+    id: ID
+    name: String
+    isActive: Boolean
+    description: String
+}
+
+extend type Query {
+    allFollowUpTypes(page: Int, size: Int): FollowUpTypePage
+    followUpTypeById(id: ID!): FollowUpType
+}
+
+extend type Mutation {
+    addFollowUpType(input: FollowUpTypeDto): Response
+    updateFollowUpType(id: ID!, input: FollowUpTypeDto): Response
+    deleteFollowUpType(id: ID!): Response
+}

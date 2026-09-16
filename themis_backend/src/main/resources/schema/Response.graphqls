@@ -1,0 +1,13 @@
+type Query {
+}
+
+type Mutation {
+}
+
+scalar Long
+
+type Response {
+    id: Long
+    code: String
+    message: String
+}

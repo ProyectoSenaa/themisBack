@@ -1,0 +1,160 @@
+nohup: ignoring input
+
+                                                                                      ████████╗██╗  ██╗███████╗███╗   ███╗██╗███████╗
+                                                                                      ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██║██╔════╝
+                                                                                         ██║   ███████║█████╗  ██╔████╔██║██║███████╗
+                                                                                         ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██║╚════██║
+                                                                                         ██║   ██║  ██║███████╗██║ ╚═╝ ██║██║███████║
+                                                                                         ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚══════╝
+
+                                                                                    
+                                                                                     ┌───────────────────────────────────────────────┐
+                                                                                     │  App:   themis                                │
+                                                                                     │  Ver:   0.0.1-SNAPSHOT                                 │
+                                                                                     │  Boot:  3.4.6                                 │
+                                                                                     │  Java:  17.0.12                               │
+                                                                                     │  User:  fabrica                               │
+                                                                                     └───────────────────────────────────────────────┘
+
+                                                                                    
+                                                                                      ⚖ “Justicia y claridad en cada novedad”
+
+                                                                                    
+                                                                                      ➤ Port:       8080
+                                                                                      ➤ GraphQL:    /themis/graphql
+                                                                                      ➤ Timezone:   America/Bogota
+                                                                                      ➤ Host:       localhost
+
+                                                                                    
+                                                                                      ─────────────────────────────────────────────────
+
+2025-12-04T17:26:46.078-05:00  INFO 31573 --- [           main] co.sena.edu.themis.ThemisApplication     : Starting ThemisApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 31573 (/home/fabrica/themisBack/themis_backend/build/libs/temis-0.0.1-SNAPSHOT.jar started by fabrica in /home/fabrica/themisBack/themis_backend)
+2025-12-04T17:26:46.083-05:00  INFO 31573 --- [           main] co.sena.edu.themis.ThemisApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-12-04T17:26:47.323-05:00  INFO 31573 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04T17:26:47.550-05:00  INFO 31573 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216 ms. Found 12 JPA repository interfaces.
+2025-12-04T17:26:48.343-05:00  INFO 31573 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-04T17:26:48.360-05:00  INFO 31573 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-04T17:26:48.360-05:00  INFO 31573 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-12-04T17:26:48.398-05:00  INFO 31573 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-04T17:26:48.399-05:00  INFO 31573 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2268 ms
+2025-12-04T17:26:48.617-05:00  INFO 31573 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04T17:26:48.687-05:00  INFO 31573 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-12-04T17:26:48.728-05:00  INFO 31573 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-04T17:26:49.050-05:00  INFO 31573 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-04T17:26:49.082-05:00  INFO 31573 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-04T17:26:49.328-05:00  INFO 31573 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@96c840a
+2025-12-04T17:26:49.330-05:00  INFO 31573 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-04T17:26:49.361-05:00  WARN 31573 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-04T17:26:49.385-05:00  INFO 31573 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-04T17:26:50.637-05:00  INFO 31573 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-04T17:26:51.375-05:00  INFO 31573 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T17:26:51.644-05:00  INFO 31573 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-04T17:26:52.764-05:00  INFO 31573 --- [           main] n.d.b.g.c.a.GrpcClientAutoConfiguration  : Detected grpc-netty-shaded: Creating ShadedNettyChannelFactory + InProcessChannelFactory
+2025-12-04T17:26:53.638-05:00  WARN 31573 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-04T17:26:53.671-05:00  WARN 31573 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1aed6db3-2caa-43ab-93de-ae353aae313e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-12-04T17:26:53.690-05:00  INFO 31573 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-12-04T17:26:54.384-05:00  INFO 31573 --- [           main] c.n.g.d.s.ReloadableGraphQLSource        : Rebuilding GraphQLSource
+2025-12-04T17:26:54.944-05:00  INFO 31573 --- [           main] .d.s.a.DgsSpringGraphQLAutoConfiguration : ***Schema Report***
+Unmapped fields: [CommitteePage.data, CommitteePage.date, CommitteePage.code, CommitteePage.message, CommitteePage.currentPage, CommitteePage.totalItems, CommitteePage.totalPages, Committee.id, Coordination.id, Student.id, Teacher.id, FollowUpType.id, FollowUpType.name, FollowUpType.isActive, FollowUpType.description, Administrative.id, Minute.committeeEventId, Committee.isCurrent, Committee.isActive, Committee.committeeEvents, CommitteeEventPage.data, CommitteeEventPage.date, CommitteeEventPage.code, CommitteeEventPage.message, CommitteeEventPage.currentPage, CommitteeEventPage.totalItems, CommitteeEventPage.totalPages, FollowUpFlowStatusPage.data, FollowUpFlowStatusPage.date, FollowUpFlowStatusPage.code, FollowUpFlowStatusPage.message, FollowUpFlowStatusPage.currentPage, FollowUpFlowStatusPage.totalItems, FollowUpFlowStatusPage.totalPages, FollowUpStatusPage.data, FollowUpStatusPage.date, FollowUpStatusPage.code, FollowUpStatusPage.message, FollowUpStatusPage.currentPage, FollowUpStatusPage.totalItems, FollowUpStatusPage.totalPages, FollowUpTypePage.data, FollowUpTypePage.date, FollowUpTypePage.code, FollowUpTypePage.message, FollowUpTypePage.currentPage, FollowUpTypePage.totalItems, FollowUpTypePage.totalPages, FollowUpPage.data, FollowUpPage.date, FollowUpPage.code, FollowUpPage.message, FollowUpPage.currentPage, FollowUpPage.totalItems, FollowUpPage.totalPages, Query.followUpsByTeacher, Query.followUpsByCoordinator, MinutePage.data, MinutePage.date, MinutePage.code, MinutePage.message, MinutePage.currentPage, MinutePage.totalItems, MinutePage.totalPages, Query.minuteById, noticationAnswer.data, noticationAnswer.date, noticationAnswer.code, noticationAnswer.message, noticationAnswer.currentPage, noticationAnswer.totalItems, noticationAnswer.totalPages, NoveltyPage.data, NoveltyPage.date, NoveltyPage.code, NoveltyPage.message, NoveltyPage.currentPage, NoveltyPage.totalItems, NoveltyPage.totalPages, Query.allNoveltyStatuses, Query.noveltyStatusById, NoveltyTypePage.data, NoveltyTypePage.date, NoveltyTypePage.code, NoveltyTypePage.message, NoveltyTypePage.currentPage, NoveltyTypePage.totalItems, NoveltyTypePage.totalPages, Query.allNoveltyTypeList, Query.allProcessFlowStatuses, Query.processFlowStatusById, Query._service, Query._entities, Response.id, Response.code, Response.message, Mutation.sendSingleHtmlEmail, Mutation.sendMultipleHtmlEmail, Mutation.sendNoveltyCreationNotification, Mutation.sendNoveltyUpdateNotification, Mutation.addCommitteeEventAndSendEmail, Mutation.sendCommitteeEventCreationEmail, Mutation.addCommitteeAndSendEmail, Mutation.updateFollowUpFlowStatus, Mutation.deleteFollowUpFlowStatus, Mutation.updateFollowUpStatus, Mutation.deleteFollowUpStatus, Mutation.sendPendingFollowUpReminders, Mutation.returnFollowUp, Mutation.addMinute, Mutation.updateMinute, Mutation.deleteMinute, Mutation.addNoveltyStatus, Mutation.updateNoveltyStatus, Mutation.deleteNoveltyStatus, Mutation.addProcessFlowStatus, Mutation.updateProcessFlowStatus, Mutation.deleteProcessFlowStatus]
+Unmapped registrations: {Query._entities.FollowUp=com.netflix.graphql.dgs.springgraphql.DgsGraphQLSourceBuilder$DgsSelfDescribingDataFetcher@55ecfa1c, Query._entities.Novelty=com.netflix.graphql.dgs.springgraphql.DgsGraphQLSourceBuilder$DgsSelfDescribingDataFetcher@7960ba81, Query._entities.Student=com.netflix.graphql.dgs.springgraphql.DgsGraphQLSourceBuilder$DgsSelfDescribingDataFetcher@4150406a, Query._entities.Teacher=com.netflix.graphql.dgs.springgraphql.DgsGraphQLSourceBuilder$DgsSelfDescribingDataFetcher@420c38f9, Query._entities.Administrative=com.netflix.graphql.dgs.springgraphql.DgsGraphQLSourceBuilder$DgsSelfDescribingDataFetcher@700216be, Query._entities.Coordination=com.netflix.graphql.dgs.springgraphql.DgsGraphQLSourceBuilder$DgsSelfDescribingDataFetcher@c4a1e8d}
+Unmapped arguments: []
+Skipped types: [Committee, Committee]
+
+2025-12-04T17:26:54.979-05:00  INFO 31573 --- [           main] s.b.a.g.s.GraphQlWebMvcAutoConfiguration : GraphQL endpoint HTTP POST /themis/graphql
+2025-12-04T17:26:55.166-05:00  INFO 31573 --- [           main] g.s.a.GrpcServerFactoryAutoConfiguration : Detected grpc-netty-shaded: Creating ShadedNettyGrpcServerFactory
+2025-12-04T17:26:55.436-05:00  INFO 31573 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-04T17:26:55.443-05:00  INFO 31573 --- [           main] n.d.b.g.s.s.AbstractGrpcServerFactory    : Registered gRPC service: grpc.health.v1.Health, bean: grpcHealthService, class: io.grpc.protobuf.services.HealthServiceImpl
+2025-12-04T17:26:55.443-05:00  INFO 31573 --- [           main] n.d.b.g.s.s.AbstractGrpcServerFactory    : Registered gRPC service: grpc.reflection.v1alpha.ServerReflection, bean: protoReflectionService, class: io.grpc.protobuf.services.ProtoReflectionService
+2025-12-04T17:26:55.523-05:00  INFO 31573 --- [           main] n.d.b.g.s.s.GrpcServerLifecycle          : gRPC Server started, listening on address: *, port: 9090
+2025-12-04T17:26:55.547-05:00  INFO 31573 --- [           main] co.sena.edu.themis.ThemisApplication     : Started ThemisApplication in 10.433 seconds (process running for 11.022)
+Hibernate: 
+    select
+        count(*) 
+    from
+        novelty_type nt1_0
+Novelty types already exist, skipping seeding...
+Hibernate: 
+    select
+        count(*) 
+    from
+        novelty_status ns1_0
+Novelty statuses already exist, skipping seeding...
+Ensuring process flow statuses exist...
+Hibernate: 
+    select
+        pfs1_0.id 
+    from
+        process_flow_status pfs1_0 
+    where
+        pfs1_0.name=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        pfs1_0.id 
+    from
+        process_flow_status pfs1_0 
+    where
+        pfs1_0.name=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        pfs1_0.id 
+    from
+        process_flow_status pfs1_0 
+    where
+        pfs1_0.name=? 
+    fetch
+        first ? rows only
+Process flow statuses already present. Skipping creation.
+Hibernate: 
+    select
+        count(*) 
+    from
+        follow_up_type fut1_0
+Follow-up types already exist, skipping seeding...
+Hibernate: 
+    select
+        count(*) 
+    from
+        follow_up_status fus1_0
+Follow-up statuses already exist, skipping seeding...
+Ensuring follow-up flow statuses exist...
+Hibernate: 
+    select
+        fufs1_0.id 
+    from
+        follow_up_flow_status fufs1_0 
+    where
+        fufs1_0.name=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        fufs1_0.id 
+    from
+        follow_up_flow_status fufs1_0 
+    where
+        fufs1_0.name=? 
+    fetch
+        first ? rows only
+Follow-up flow statuses already present. Skipping creation.
+2025-12-04T17:30:32.355-05:00  INFO 31573 --- [ionShutdownHook] n.d.b.g.s.s.GrpcServerLifecycle          : Completed gRPC server shutdown
+2025-12-04T17:30:32.357-05:00  INFO 31573 --- [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-04T17:30:32.364-05:00  INFO 31573 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-04T17:30:32.407-05:00  INFO 31573 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T17:30:32.409-05:00  INFO 31573 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-04T17:30:32.420-05:00  INFO 31573 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

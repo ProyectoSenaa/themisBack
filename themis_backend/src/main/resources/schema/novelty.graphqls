@@ -1,0 +1,79 @@
+type NoveltyTypecount {
+    id: ID
+    nameNovelty: String
+}
+
+type Novelty @key(fields: "id") {
+    id: ID
+    date: String
+    observation: String
+    justification: String
+    isActive: Boolean
+    noveltyFiles: String
+    noveltyType: NoveltyType
+    noveltyStatus: NoveltyStatus
+    processFlowStatus: ProcessFlowStatus
+    student: Student
+    studentName: String
+    studySheetId: Long
+    teacher: Teacher
+    teacherName: String
+    administrative: Administrative
+}
+
+type NoveltyTypeCount {
+    id: ID
+    noveltyTypeName: String
+    count: Int
+}
+
+type NoveltyPage {
+    data: [Novelty]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+
+type PdfResponse {
+data: String
+code: Int
+message: String
+}
+
+
+
+input NoveltyDto {
+    id: ID
+    date: String
+    observation: String
+    justification: String
+    isActive: Boolean
+    noveltyFiles: String
+    noveltyType: NoveltyTypeDto
+    noveltyStatus: NoveltyStatusDto
+    processFlowStatus: ProcessFlowStatusDto
+    studentId: Long
+    studentName: String
+    studySheetId: Long
+    teacherId: Long
+    teacherName: String
+    administrativeId: Long
+}
+
+
+extend type Query {
+    allNovelties(page: Int, size: Int): NoveltyPage
+    noveltyById(id: ID!): Novelty
+}
+
+extend type Mutation {
+    addNovelty(input: NoveltyDto): Response
+    updateNovelty(id: ID!, input: NoveltyDto): Response
+    deleteNovelty(id: ID!): Response
+    sendPendingNoveltyReminders: Response
+    returnNovelty(id: ID!, observation: String!): Response
+}

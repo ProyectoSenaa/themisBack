@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package co.sena.edu.olympo_back;
+
+message LaborDepartmentResponse {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  bool found = 4;
+}

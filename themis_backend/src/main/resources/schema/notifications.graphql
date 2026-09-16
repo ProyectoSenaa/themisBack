@@ -1,0 +1,48 @@
+#1. crear el tipo novedad
+type Notication{
+    id:Long
+    notiMessage:String
+    notiStatus:String
+    dateAttentation:String
+    registrationDate:String
+}
+#2. respuesta
+type noticationAnswer{
+    data:[Notication]
+    date: String
+    code:String
+    message:String
+    currentPage:Int
+    totalItems:Int
+    totalPages:Int
+}
+# 3. Actualizar la notificaion
+input NotificationDto {
+    id: Long
+    notiMessage: String
+    notiStatus: String
+    dateAttention: String
+    registrationDate: String
+}
+extend type Query {
+    allNotification(page: Int, size: Int): noticationAnswer
+    getNotificationById(id: String!): noticationAnswer
+}
+extend type Mutation {
+    createNotification(
+        notiMessage: String!
+        notiStatus: String!
+        dateAttention: String
+        registrationDate: String
+    ): Response
+
+    updateNotification(
+        id: Long
+        notiMessage: String!
+        notiStatus: String!
+        dateAttention: String
+        registrationDate: String
+    ): Response
+
+    deleteNotification(id: String!): Response
+}

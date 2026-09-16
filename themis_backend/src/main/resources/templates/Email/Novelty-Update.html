@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedad Actualizada - SENA Themis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            margin: -30px -30px 20px -30px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #155724;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+        .update-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">SENA THEMIS</div>
+            <p>Sistema de Gestión de Novedades</p>
+            <span class="update-badge">ACTUALIZACIÓN</span>
+        </div>
+        
+        <div class="content">
+            <h2>Novedad Actualizada</h2>
+            <p>Se ha actualizado una novedad en el sistema. A continuación, los detalles actualizados:</p>
+            
+            <div class="info-box">
+                <p><span class="info-label">ID de Novedad:</span> ${noveltyId}</p>
+                <p><span class="info-label">Tipo de Novedad:</span> ${noveltyTypeName}</p>
+                <p><span class="info-label">Fecha de Novedad:</span> ${noveltyDate}</p>
+                <p><span class="info-label">Estado Actual:</span> ${status}</p>
+            </div>
+            
+            <div class="info-box">
+                <p><span class="info-label">Descripción del Tipo:</span></p>
+                <p>${noveltyTypeDescription}</p>
+                <p><span class="info-label">Artículo de Referencia:</span> ${noveltyArticle}</p>
+            </div>
+            
+            <div class="info-box">
+                <p><span class="info-label">Persona Involucrada:</span> ${personName}</p>
+                <p><span class="info-label">Documento:</span> ${personDocument}</p>
+                <p><span class="info-label">Email:</span> ${personEmail}</p>
+            </div>
+            
+            <div class="info-box">
+                <p><span class="info-label">Observaciones:</span></p>
+                <p>${observation}</p>
+            </div>
+            
+            <p><strong>Fecha de actualización:</strong> ${currentDate}</p>
+            <p><em>Esta notificación se envió automáticamente debido a cambios en la novedad.</em></p>
+        </div>
+        
+        <div class="footer">
+            <p>SENA - Servicio Nacional de Aprendizaje</p>
+            <p>Sistema Themis - Gestión de Novedades Académicas</p>
+            <p>Este es un mensaje automático, por favor no responder a este correo.</p>
+        </div>
+    </div>
+</body>
+</html>

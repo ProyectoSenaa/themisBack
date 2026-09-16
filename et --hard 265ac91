@@ -1,0 +1,82 @@
+[33mae56698[m[33m ([m[1;36mHEAD -> [m[1;32mdianaDev[m[33m)[m con cambios de sergio
+[33m265ac91[m[33m ([m[1;31morigin/dianaDev[m[33m)[m Validaciones
+[33m280e815[m Comite e emails listos para probar
+[33m666cd68[m Envio de emails completado
+[33m41e9eda[m para arreglar
+[33m48b95b7[m[33m ([m[1;31morigin/SergioDev[m[33m)[m Creación de logica para manejo de comites
+[33m91bee33[m Actualizacion email para comitè
+[33m4f17d73[m Emails
+[33mfcefaa1[m Correos masivos
+[33ma72075e[m Push 25 de ago
+[33m118646a[m Change
+[33m97c8f34[m actualizacion
+[33m0ed1358[m Change
+[33m612deb7[m changes of federation in commite and committeeEvent
+[33m339d04f[m Actualizacion novedades
+[33me8e9f68[m Actualizacion validaciones
+[33m4a4e546[m Creacion del grpc StudySheet
+[33m13231ad[m Federation and Logic of commits
+[33mb43341b[m Federation and Logic of commites
+[33m1fd18ff[m feat: Implement Strategy pattern for novelty validation with Olympo gRPC integration - Add BadPerformanceValidationStrategy and SeriousOffensesValidationStrategy with ficha validation - Add PostponementValidationStrategy and TransfersValidationStrategy with approval/rejection logic - Implement NoveltyValidationContext to manage strategy selection - Add gRPC integration with PersonGrpcService for Olympo federation data - Create Student.proto for student-specific gRPC services - Add NoveltyStatusService and ProcessFlowStatusService with repositories - Add REST API endpoints in NoveltyValidationController - Remove unused Novelty.proto file - Remove IntelliJ IDEA configuration files from tracking
+[33m55dd76d[m[33m ([m[1;31morigin/AlejandroDev[m[33m)[m Cambios definitivos BD, DTOs, Schemas
+[33m3c4f19f[m Cambios finales de BD, DTOs, Schemas
+[33maec4a0b[m[33m ([m[1;31morigin/TristeDev[m[33m)[m cambios fundamentales modelo de datos
+[33m4799f84[m Merge branch 'AlejandroDev' of https://github.com/senaFactory/themisBack into AlejandroDev
+[33m01d7f29[m merge complete
+[33mfe9ecc4[m Resolve merge
+[33mfc9422f[m changes of commits
+[33me77234e[m changes of commits
+[33m5af09bf[m Commit actualizacion
+[33mb9cccfb[m Changes of schemas
+[33m0542df1[m Merge remote-tracking branch 'origin/AlejandroDev' into AlejandroDev
+[33mb4c9e66[m Merge remote-tracking branch 'origin/dianaDev' into AlejandroDev
+[33m90c8280[m changes of commits
+[33m68bf4ee[m Commit actualizacion
+[33me17ff42[m actualizaciones
+[33mc87e475[m Cambios en el application.yml
+[33mb0d3151[m Commit actualizacion
+[33m6d39b8c[m Eliminado para evitar conflicto en Windows
+[33maa66cc9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Rename NoveltyDTO.java to NoveltyTYpeSecondDTO.java
+[33m75af71e[m federation changes
+[33m264a17f[m changes of commits
+[33m71503f8[m changes of commits
+[33m4889f34[m changes of commits
+[33m72feb18[m Cambios en reportes y comites
+[33m1201e39[m actualizacion de graficos y reportes
+[33m4abc8c7[m changes
+[33mc1739ef[m Merge remote-tracking branch 'origin/AlejandroDev' into dianaDev
+[33m01b6c45[m Cambios en las graficas de reportes
+[33m479ef9e[m anexo de archivo proto persom
+[33me93e427[m Desarrollo e implementacion de envio de correos
+[33md688921[m cambios en el envio de correo
+[33m4e98bd8[m cambios en el envio de correo
+[33m49abe5f[m Envio de correos funcional
+[33meaaf23a[m LongScalar change
+[33md4c4749[m traermecambios
+[33m49bc6bd[m novelty noveltytype migration to graphql dgs
+[33m54da36a[m Feature: Agregar y adaptar entidades rol, noveltytypes, novelty a GraphQl
+[33m2326145[m[33m ([m[1;31morigin/ThemisRest[m[33m)[m feat: adsi to adso in seeder search
+[33m879dbe8[m Inserción en seeders
+[33m6f056f9[m Seeders para funcionalidad del sistema
+[33m9523be9[m Novelty seeders
+[33m46e1384[m Update: seeders users
+[33m3c77178[m[33m ([m[1;31morigin/MichaelDev[m[33m)[m dependecie of org.json
+[33m0308229[m first push to branch
+[33m8fc2a93[m[33m ([m[1;31morigin/dayannaDev[m[33m)[m Creating the Seeders for the roles in the DB
+[33m010d113[m Se agrego toda la lógica del backend
+[33m1799e91[m Commit de prueba 1
+[33m73763d4[m se agrega el proyecto
+[33mba072d5[m Merge pull request #3 from senaFactory/dev
+[33me3d1f8f[m[33m ([m[1;31morigin/dev[m[33m)[m Merge pull request #2 from senaFactory/stevanDev
+[33m00369e9[m Merge pull request #1 from senaFactory/santiagoDev
+[33m28c3060[m se realizo cambios
+[33mcf78757[m se realizo cambios
+[33m40e2713[m se agregaron los daos para el backend
+[33m45412f1[m se agrego los daos
+[33m3db83fe[m subiendo cambios de DTO y conexion entre el backend y frontend
+[33m2bc8865[m creacion de Dtos
+[33m889f16e[m conexion entre back y front
+[33m5f694fd[m creacion de controllers
+[33m3f98285[m realizacion de relaciones entre entidades
+[33mf7d9a31[m First commit
+[33mdb2b587[m Initial commit

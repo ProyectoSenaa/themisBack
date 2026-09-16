@@ -1,0 +1,35 @@
+
+type EmailResponse {
+    code: String!
+    message: String!
+    emailDestinatario: String
+    totalDestinatarios: Int
+    noveltyId: String
+}
+
+
+
+extend type Mutation {
+    sendSingleHtmlEmail(
+        emailDestinatario: String!
+        subject: String!
+        htmlContent: String!
+    ): EmailResponse!
+
+    sendMultipleHtmlEmail(
+        emailsDestinatarios: [String!]!
+        subject: String!
+        htmlContent: String!
+    ): EmailResponse!
+
+    sendNoveltyCreationNotification(
+        noveltyId: Long
+        noveltyTypeId: Long
+    ): EmailResponse!
+
+    sendNoveltyUpdateNotification(
+        noveltyId: Long
+        noveltyTypeId: Long
+    ): EmailResponse!
+}
+

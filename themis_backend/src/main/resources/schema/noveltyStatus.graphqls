@@ -1,0 +1,33 @@
+type NoveltyStatus {
+    id: ID
+    name: String
+    description: String
+}
+
+type NoveltyStatusPage {
+    data: [NoveltyStatus]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input NoveltyStatusDto {
+    id: ID
+    name: String
+    description: String
+}
+
+extend type Query {
+    allNoveltyStatuses(page: Int, size: Int): NoveltyStatusPage
+    noveltyStatusById(id: ID!): NoveltyStatus
+}
+
+extend type Mutation {
+    addNoveltyStatus(input: NoveltyStatusDto): Response
+    updateNoveltyStatus(id: ID!, input: NoveltyStatusDto): Response
+    deleteNoveltyStatus(id: ID!): Response
+}
+

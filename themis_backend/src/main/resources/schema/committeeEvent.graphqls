@@ -1,0 +1,63 @@
+type CommitteeEvent @key(fields: "id") {
+    id: ID
+    date: String
+    hour: String
+    session: String
+    coordinationName: String
+    createdAt: String
+    finishedAt: String
+    committee: Committee
+    minutes: [Minute]
+    novelties: [Novelty]
+}
+
+type CommitteeEventPage {
+    data: [CommitteeEvent]
+    date: String
+    code: String
+    message: String
+    currentPage: Int
+    totalItems: Int
+    totalPages: Int
+}
+
+input CommitteeEventDto {
+    id: ID
+    date: String
+    hour: String
+    session: String
+    coordinationName: String
+    createdAt: String
+    finishedAt: String
+    committee: CommitteeDto
+    minutes: [MinuteDto]
+}
+
+input CommitteeNoveltyObservationInput {
+    studentId: Long!
+    observation: String
+}
+
+input CommitteeNoveltyResponseInput {
+    noveltyId: ID!
+    studentId: Long!
+    statusId: Long!
+    observation: String
+    name: String!
+}
+
+extend type Query {
+    allCommitteeEvents(page: Int, size: Int): CommitteeEventPage
+    committeeEventById(id: ID!): CommitteeEvent
+}
+
+extend type Mutation {
+    addCommitteeEvent(input: CommitteeEventDto): Response
+    addCommitteeEventsBulk(input: [CommitteeEventDto!]): CommitteeEventPage
+    updateCommitteeEvent(id: ID!, input: CommitteeEventDto): Response
+    deleteCommitteeEvent(id: ID!): Response
+    finalizeCommitteeEvent(eventId: ID!, responses: [CommitteeNoveltyObservationInput!]!): Response
+    finalizeCommitteeEventOnly(eventId: ID!): Response
+    respondNoveltiesFromCommittee(committeeId: Long!, responses: [CommitteeNoveltyResponseInput!]!): Response
+    assignCommitteeToEvents(committeeId: Long!, eventIds: [Long!]!): CommitteeEventPage
+}

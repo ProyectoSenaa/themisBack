@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package co.sena.edu.olympo_back;
+
+import "Person.proto";
+
+message StudentResponse {
+  int64 id = 1;
+  bool state = 2;
+  string created_at = 3;
+  string updated_at = 4;
+  PersonResponse person = 5;
+  bool found = 6;
+}
+
+message GetStudentByIdRequest {
+  int64 id = 1;
+}
+
+message GetStudentByPersonDocumentRequest {
+  string document = 1;
+}
+
+message GetStudentsByIdsRequest {
+  repeated int64 ids = 1;
+}
+
+message StudentList {
+  repeated StudentResponse students = 1;
+}
+
+service StudentService {
+  rpc GetById(GetStudentByIdRequest) returns (StudentResponse);
+  rpc GetStudentByPersonDocument(GetStudentByPersonDocumentRequest) returns (StudentResponse);
+  rpc GetByIds(GetStudentsByIdsRequest) returns (StudentList);
+}

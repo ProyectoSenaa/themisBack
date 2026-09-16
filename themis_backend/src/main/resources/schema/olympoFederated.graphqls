@@ -1,0 +1,25 @@
+type Student @key(fields: "id") @extends {
+    id: ID @external
+    novelties: [Novelty]
+    committees: [Committee]
+    followUps: [FollowUp]
+}
+
+type Administrative @key(fields: "id") @extends {
+    id: ID @external
+    novelties: [Novelty]
+    committees: [Committee]
+    followUps: [FollowUp]
+}
+
+type Teacher @key(fields: "id") @extends {
+    id: ID @external
+    novelties: [Novelty]
+    committees: [Committee]
+    followUps: [FollowUp]
+}
+
+type Coordination @key(fields: "id") @extends {
+    id: ID @external
+    committees: [Committee]
+}

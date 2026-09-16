@@ -1,0 +1,91 @@
+server:
+  port: 8080
+
+spring:
+  graphql:
+    path: /themis/graphql
+    graphiql:
+      enabled: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+##ffffff
+  datasource:
+    url: jdbc:postgresql://localhost:5432/themisappgrapg
+    username: fabricaadmin
+    password: "0001"
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+        format_sql: true
+    show-sql: true
+    hibernate:
+
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: senathemis@gmail.com
+    password: al w v n r a t k r e d e a k t
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+        debug: true
+
+  logging:
+    level:
+      org.springframework.mail: DEBUG
+      com.sun.mail: DEBUG
+      co.sena.edu.themis: DEBUG
+      io.grpc: DEBUG
+      io.netty: DEBUG
+      "net.devh": DEBUG
+      "org.springframework.boot.autoconfigure.grpc": DEBUG
+
+# gRPC settings
+grpc:
+  server:
+    port: 9090
+  client:
+    PersonService:
+      address: "static://10.1.173.159:9090"
+      negotiation-type: plaintext
+    StudySheetService:
+      address: "static://10.1.173.159:9090"
+      negotiation-type: plaintext
+    StudentService:
+      address: "static://10.1.173.159:9090"
+      negotiation-type: plaintext
+    TeacherService:
+      address: "static://10.1.173.159:9090"
+      negotiation-type: plaintext
+    AdministrativeService:
+      address: "static://10.1.173.159:9090"
+      negotiation-type: plaintext
+
+external.api.connect.timeout: 5000
+external.api.read.timeout: 10000
+themis.grpc.person.deadline-ms: 10000
+
+# JWT secret (can be overridden with env var JWT_SECRET)
+jwt:
+  secret: ${JWT_SECRET:change-me}
